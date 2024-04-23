@@ -171,7 +171,11 @@ void excluirPrimeiroElemento()
 		return;
 	}
 	else if (primeiro == ultimo) {
-		cout << "O elemento nao pode ser excluido. \n";
+		NO* aux = primeiro;
+		primeiro = NULL;
+		ultimo = NULL;
+		free(aux);
+		cout << "Elemento excluido\n";
 	}
 	else {
 		NO* aux = primeiro;
@@ -188,8 +192,12 @@ void excluirUltimoElemento()
 		cout << "Lista vazia \n";
 		return;
 	}
-	else if (primeiro == ultimo) {
-		cout << "O elemento nao pode ser excluido.\n";
+	else if (ultimo == primeiro) {
+		NO* aux = ultimo;
+		primeiro = NULL;
+		ultimo = NULL;
+		free(aux);
+		cout << "Elemento excluido\n";
 	}
 	else {
 		NO* aux = ultimo;
